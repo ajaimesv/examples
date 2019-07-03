@@ -1,6 +1,6 @@
 # Thumbnail creation using PHP
 
-```
+```php
 #!/usr/bin/php
 
 <?php
