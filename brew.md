@@ -1,11 +1,11 @@
-#brew
+# brew
 
 `brew` is the core command for the Homebrew project.
 
 `brew cask` is an extension to brew that allows management of graphical applications through the Cask project.
 
 
-Sample commands
+Frequent commands
 
 ```
 brew list
@@ -21,6 +21,8 @@ brew services start <application>
 brew services stop <application>
 brew services restart <application>
 ```
+
+Remove an application and any related service file.
 ```
 brew remove <application>
 brew services cleanup
