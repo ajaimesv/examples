@@ -15,6 +15,7 @@ Futures and actors are very similar.
 
 The default PlayFramework application creates the following code:
 
+```scala
   private def getFutureMessage(delayTime: FiniteDuration): Future[String] = {
     val promise: Promise[String] = Promise[String]()
     actorSystem.scheduler.scheduleOnce(delayTime) {
@@ -22,6 +23,7 @@ The default PlayFramework application creates the following code:
     }(actorSystem.dispatcher) // run scheduled tasks using the actor system's dispatcher
     promise.future
   }
+```
 
 actorSystem is used for scheduling tasks in the future.
 
@@ -36,7 +38,7 @@ actorSystem is used for scheduling tasks in the future.
 
 For example:
 
-```
+```scala
 class Samples @Inject()(components: ControllerComponents)(implicit ec: ExecutionContext)
     extends AbstractController(components) {
   def someAsyncAction = Action.async {
