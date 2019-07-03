@@ -1,6 +1,6 @@
 ncurses example
 
-```
+```c
 #include <ncurses.h>
 #include <string.h>
 
