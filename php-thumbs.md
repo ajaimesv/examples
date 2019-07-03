@@ -1,5 +1,7 @@
 # Thumbnail creation using PHP
 
+Extracts video thumbnails and compares them against each other.
+
 ```php
 #!/usr/bin/php
 
