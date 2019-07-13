@@ -58,7 +58,7 @@ class HomeController @Inject()(
         else throw new ApiException(response.statusText)
       } recover {
         case e => throw new ApiException(s"$url ${e.getMessage}")
-      } transform { Try(_) } // Wrap future responses in Success or Failure instances
+      } transform { Try(_) } // Wrap future responses in Success and exceptions in Failure instances
     }
   }
 
