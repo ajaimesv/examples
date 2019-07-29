@@ -1,5 +1,11 @@
 Some useful content for everybody's hosts file.
 
+* On Mac/Linux, put it at the end of your /etc/hosts file.
+* On Windows, put it at the end of your C:\Windows\System32\drivers\etc\hosts file.
+
+In both cases you need admin privileges to do it.
+
+
 ```
 0.0.0.0 2975c.v.fwmrm.net
 0.0.0.0 2mdn.net
