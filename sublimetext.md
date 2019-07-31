@@ -1,7 +1,7 @@
 
 ## Plugins
 
-* Package control
+* [Package control](https://packagecontrol.io/installation)
 * Solarized Color Scheme
 * BracketHighlighter
 * HTML-CSS-JS Prettify
