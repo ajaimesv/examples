@@ -1,5 +1,7 @@
 ## .vimrc
 
+Make sure you create this file before even using vim or you will face [this error/feature](https://github.com/vim/vim/issues/1326).
+
 ```
 set sm
 set number
