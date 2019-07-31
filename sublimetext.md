@@ -57,5 +57,4 @@
     "trim_trailing_white_space_on_save": true
 }
 
-
 ```
