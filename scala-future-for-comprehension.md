@@ -6,7 +6,8 @@ The function returns either Future.successful or Future.failed. Unlike other exa
 we don't need to try to recover here, that is, once a Future fails, we stop the process and return since we 
 can't keep calling other functions because of parameter dependency.
 
-`readId` apparentely does not need the `recoverWith` call. Results are the same with or without it.
+`readId` apparentely does not need the `recoverWith` call. Results are the same with or without it, although 
+it may be because I'm not calling a real function from it.
 
 ```scala
 def readId: Future[Int] = {
