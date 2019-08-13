@@ -6,4 +6,5 @@ target
 dist
 .DS_store
 *.swp
+.svn
 ```
