@@ -1,6 +1,7 @@
 # .gitignore
 
 ```
+.g8
 .idea
 target
 dist
