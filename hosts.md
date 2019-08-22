@@ -1,3 +1,5 @@
+# hosts file
+
 Some useful content for everybody's hosts file.
 
 * On Mac/Linux, put it at the end of your /etc/hosts file.
