@@ -6,6 +6,7 @@
 .idea
 target
 dist
+logs
 
 # Mac
 .DS_store
