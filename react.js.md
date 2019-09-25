@@ -3,6 +3,10 @@
 
 Here we have a checkbox that, when clicked, calls its parent component and updates its state.
 
+It is recommended for child components to be stateless. They can receive updates via their props, which 
+are updated by their parent's state. In the following example, MyCheckbox is stateless. It's label and
+value get updated when its parent changes its state in handleClick(value), which happens to be called
+by MyCheckbox.
 
 ```js
 import React from "react";
@@ -10,22 +14,14 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-class RememberSelected extends React.Component {
+class MyCheckbox extends React.Component {
   constructor(props) {
     super(props);
     this.handleChangeState = this.handleChangeState.bind(this);
-    this.state = {
-      checked: false,
-      label: this.props.label
-    };
   }
 
   handleChangeState() {
-    const st = this.state
-    this.setState({
-      checked: !st.checked
-    });
-    this.props.onChange(!st.checked)
+    this.props.onChange(!this.props.checked)
   }
 
   render() {
@@ -33,10 +29,10 @@ class RememberSelected extends React.Component {
       <label>
         <input
           type="checkbox"
-          checked={this.state["checked"]}
+          checked={this.props.checked}
           onChange={this.handleChangeState}
         />
-        {this.state["label"]}
+        {this.props.label + " " + this.props.checked}
       </label>
     );
   }
@@ -48,22 +44,25 @@ class Container extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      checked: false
+      checked: true
     }
   }
 
-  handleClick(state) {
-    this.setState({ checked: state });
-    console.log("read " + state);
+  handleClick(value) {
+    this.setState((state, props) => { 
+      return { checked: value }
+      // could be the following as well:
+      // return { checked: !state.checked }
+    });
   }
 
   render() {
     return (
       <div>
-        <RememberSelected 
-          label="Hello World" 
+        <MyCheckbox 
+          label="Is box checked?" 
           onChange={this.handleClick}
-          checked={this.checked} />
+          checked={this.state.checked} />
       </div>
     );
   }
