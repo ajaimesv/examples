@@ -81,4 +81,87 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
+Here is another example, this time using a textbox to update the contents of a div. Both child components are stateless.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./styles.css";
+
+class MyTextbox extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(evt) {
+    this.props.onChange(evt.target.value)
+  }
+
+  render() {
+    return (
+      <div>
+        <label>{this.props.label}</label>
+        <input 
+          type="textbox"
+          onChange={evt => this.handleChange(evt)}
+          />
+      </div>
+    )
+  }
+
+}
+
+class MyLabel extends React.Component {
+  render() {
+    return (
+      <div>{this.props.label}</div>
+    )
+  }
+}
+
+class Container extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      label: ""
+    }
+  }
+
+  handleChange(value) {
+    this.setState((state, props) => { 
+      return { label: value }
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <MyTextbox 
+          label="Type something:" 
+          onChange={this.handleChange} />
+        <MyLabel
+          label={this.state.label} />
+      </div>
+    );
+  }
+}
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Testing</h1>
+      <Container />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
+
 Use https://codesandbox.io/ for testing.
