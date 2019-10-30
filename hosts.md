@@ -86,6 +86,7 @@ In both cases you need admin privileges to do it.
 0.0.0.0 www-googletagmanager.l.google.com
 0.0.0.0 www.analytic-google.com
 0.0.0.0 www.fastly-insights.com
+0.0.0.0 www.geniusdexchange.com
 0.0.0.0 www.google-analytics.com
 0.0.0.0 www.googleadservices.com
 0.0.0.0 www.googletagservices.com
