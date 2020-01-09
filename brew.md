@@ -27,3 +27,9 @@ Remove an application and any related service file.
 brew remove <application>
 brew services cleanup
 ```
+
+Update brew apps
+```
+brew update
+brew upgrade
+```
